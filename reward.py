@@ -38,7 +38,7 @@ def reward_function(params):
     if all_wheels_on_track:
         reward += speed*0.1
     else:
-        reward -= speed*0.1
+        reward = 1e-2
 
     if is_offtrack:
         # penalty if off track
