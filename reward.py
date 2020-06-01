@@ -36,16 +36,16 @@ def reward_function(params):
         reward += 0.001  # likely crashed/ close to off track
 
     if all_wheels_on_track:
-        reward += speed*0.1
+        reward += speed*0.05
     else:
-        reward = 1e-2
+        reward -= speed*0.05
 
     if is_offtrack:
         # penalty if off track
         reward = 1e-3
     else:
         # Give higher reward if the car is fast, but stay center still more important
-        reward += speed*0.25
+        reward += speed*0.125
     
     
     return float(reward)
